@@ -1,5 +1,9 @@
 syntax = "proto3";
 
+/*
+ * Person: ...
+*/
+
 message Person {
     int32 age = 1;
     string first_name = 2;
@@ -11,3 +15,14 @@ message Person {
     repeated string phone_numbers=7; //represents a form to say that we want to express a list
     //it can be of any type : float, boolean, etc
 }
+
+//all fields if not specified will take the default value
+/*
+bool : false
+number(int32, so on) : 0
+string : empty string
+bytes :  empty bytes
+enum : empty enum
+repeated : empty list
+
+*/
