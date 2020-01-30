@@ -1,11 +1,12 @@
-syntax = "proto3";
+syntax = "proto3"; //protocol version
 
 /*
  * Person: ...
 */
 
-message Person {
-    int32 age = 1;
+
+message Person {//"message" is a keyword; "Person" => name of message
+    int32 age = 1;//"1" is the tag; "int32" is the type, "age" is the identifier
     string first_name = 2;
     string last_name = 3;
     bytes small_picture = 4;
