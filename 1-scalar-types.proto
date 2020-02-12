@@ -1,4 +1,5 @@
 syntax = "proto3"; //protocol version
+import "gRPC/date.proto"; //to import this, we must indicate the containing root folder
 
 /*
  * Person: ...
@@ -44,12 +45,6 @@ message Person {//"message" is a keyword; "Person" => name of message
 
     //now using the Address type:
     repeated Address addresses = 10; //defining the correlative number ==> 10
-}
-
-message Date {
-    int32 year=1; //year from 1 to 9999, or 0 if specifiying a date without a year.
-    int32 month=2; //<1,12>
-    int32 day=3; // <1,31>
 }
 
 //all fields if not specified will take the default value
