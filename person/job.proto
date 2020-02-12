@@ -1,0 +1,8 @@
+syntax = "proto3";
+package my.job;
+
+message Job {
+    string description = 1;
+    int32 experience_time = 2;
+    string company = 3;
+}

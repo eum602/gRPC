@@ -1,5 +1,8 @@
 syntax = "proto3"; //protocol version
 import "person/date.proto"; //to import this, we must indicate the containing root folder
+import "person/job.proto";
+
+package person; //defining a package name for this file
 
 /*
  * Person: ...
@@ -45,6 +48,8 @@ message Person {//"message" is a keyword; "Person" => name of message
 
     //now using the Address type:
     repeated Address addresses = 10; //defining the correlative number ==> 10
+
+    my.job.Job job = 11;
 }
 
 //all fields if not specified will take the default value
