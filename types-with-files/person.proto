@@ -1,5 +1,5 @@
 syntax = "proto3"; //protocol version
-import "gRPC/date.proto"; //to import this, we must indicate the containing root folder
+import "types-with-files/date.proto"; //to import this, we must indicate the containing root folder
 
 /*
  * Person: ...
