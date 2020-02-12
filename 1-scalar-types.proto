@@ -28,8 +28,16 @@ message Person {//"message" is a keyword; "Person" => name of message
         COLOR_RED=3;
     }
 
-    SomeColor color = 7; //now using the enum
+    SomeColor color = 8; //now using the enum
 
+    //persons birthday
+    Date birthday=9; //==>adding the new structure into another message(structure).
+}
+
+message Date {
+    int32 year=1; //year from 1 to 9999, or 0 if specifiying a date without a year.
+    int32 month=2; //<1,12>
+    int32 day=3; // <1,31>
 }
 
 //all fields if not specified will take the default value
