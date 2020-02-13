@@ -1,6 +1,14 @@
+/*Enable the setting with:
+
+Settings -> Build, Execution, Deployment
+  -> Build Tools -> Gradle -> Runner
+  -> Delegate IDE build/run actions to gradle.
+  ==> since later versions of gradle it delegates by default the build and run actions to gradle , so this setup may not be necessarily
+  */
 plugins {
     id 'java'
     id 'com.google.protobuf' //adds the plugin that we have just pulled from lines below in protobuf-gradle
+    id 'idea' //ntegrates with the idea plugin and automatically registers the proto files and generated Java code as sources.
 }
 
 group 'com.github.eum602.protobuf'
@@ -13,6 +21,7 @@ repositories {
 }
 
 dependencies {
+    compile 'com.google.protobuf:protobuf-java:3.11.3' //versions found here: https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
