@@ -25,3 +25,14 @@ buildscript { //adds latest protobuf version
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.11'
     }
 }
+
+protobuf {//preparing protocol buffer executable
+    // Configure the protoc executable
+    protoc {
+        // Download from repositories
+        artifact = 'com.google.protobuf:protoc:3.11.3'  //pulls the protoc executable direclty from the specified precompiled
+        //that google puts available
+        //https://mvnrepository.com/artifact/com.google.protobuf/protoc ==> pull from here the latest version:
+        //for example ==> https://mvnrepository.com/artifact/com.google.protobuf/protoc/3.11.3
+    }
+}
