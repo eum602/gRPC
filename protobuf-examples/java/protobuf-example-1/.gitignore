@@ -1,0 +1,8 @@
+#files
+*.bin
+*.lock
+
+#folders
+.gradle
+.idea
+build
