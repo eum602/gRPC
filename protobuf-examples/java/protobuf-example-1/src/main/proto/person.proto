@@ -1,0 +1,64 @@
+syntax = "proto3"; //protocol version
+import "date.proto"; //to import this, we must indicate the containing root folder
+import  "job.proto";
+
+package person; //defining a package name for this file
+
+/*
+ * Person: ...
+*/
+
+
+message Person {//"message" is a keyword; "Person" => name of message
+    int32 age = 1;//"1" is the tag; "int32" is the type, "age" is the identifier
+    string first_name = 2;
+    string last_name = 3;
+    bytes small_picture = 4;
+    bool is_profile_verified = 5;
+    float height = 6;
+
+    repeated string phone_numbers=7; //represents a form to say that we want to express a list
+    //it can be of any type : float, boolean, etc
+
+    /*
+    ENUMS: Enumeration
+    The first value of an enum will be the default value
+    Enum must start with the tag zero(te default value)
+    */
+    enum SomeColour {
+        UNKNOWN_COLOR=0;//the first must be the default value ==> 0
+        COLOR_GREEN=1;
+        COLOR_BLUE=2;
+        COLOR_RED=3;
+    }
+
+    SomeColour color = 8; //now using the enum
+
+    //persons birthday
+    my.date.Date birthday=9; //==>adding the new structure into another message(structure).
+
+    //defining a type (message) inside another message (Person)
+    message Address {
+        string address_line_1 = 1;
+        string address_line_2 = 2;
+        string zip_code = 3;
+        string city = 4;
+        string country = 5;
+    }
+
+    //now using the Address type:
+    repeated Address addresses = 10; //defining the correlative number ==> 10
+
+    my.job.Job job = 11;
+}
+
+//all fields if not specified will take the default value
+/*
+bool : false
+number(int32, so on) : 0
+string : empty string
+bytes :  empty bytes
+enum : empty enum
+repeated : empty list
+
+*/
