@@ -17,5 +17,6 @@ public class SimpleMain {
         builder.addPhoneNumbers("123456");
         builder.addPhoneNumbers("98523567");
         builder.addPhoneNumbers("92525464");
+        builder.addAllPhoneNumbers(Arrays.asList("234","456789"));
     }
 }
