@@ -14,12 +14,15 @@ public class SimpleMain {
                 .setLastName("Doe");
 
         //assigning phone numbers ==> multiple values
-        builder.addPhoneNumbers("123456");
-        builder.addPhoneNumbers("98523567");
-        builder.addPhoneNumbers("92525464");
-        builder.addAllPhoneNumbers(Arrays.asList("234","456789"));
+        builder.addPhoneNumbers("123456")
+                .addPhoneNumbers("98523567")
+                .addPhoneNumbers("92525464")
+                .addAllPhoneNumbers(Arrays.asList("234","456789"));
 
-        System.out.printf("Setting repeated values by using indexes");
-        builder.setPhoneNumbers(2,"456789");
+        System.out.println("Setting repeated values by using indexes");
+        builder.setPhoneNumbers(2,"456789");//based index zero ==> so edits the third value of phone numbers
+
+        System.out.println("Printing all values in the builder");
+        System.out.println(builder.toString());
     }
 }
