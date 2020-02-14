@@ -2,6 +2,7 @@ package com.eum602.protobuf;
 
 import person.PersonOuterClass.Person;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class SimpleMain {
         System.out.println("Setting repeated values by using indexes");
         builder.setPhoneNumbers(2,"456789");//based index zero ==> so edits the third value of phone numbers
 
-        System.out.println("Printing all values in the builder");
+        System.out.println("\n**********Printing all values in the builder**********");
         System.out.println(builder.toString());
 
         Person personInstance = builder.build();
@@ -44,6 +45,19 @@ public class SimpleMain {
         //saving as byteArray in order to maybe send it to a network
         byte[] personInstanceBytesArray = personInstance.toByteArray(); //with this we are reading from the instance and
         //converting it to a byteArray.
+        System.out.println("\n**********Printing protocol Buffer instance converted to BytesArray**********");
+        System.out.println(personInstanceBytesArray);
+
+        try {
+            FileInputStream fileInputStream = new FileInputStream("person-message.bin");
+            Person readPersonInstanceFromFile = personInstance.parseFrom(fileInputStream);
+            System.out.println("\n**********Reading message from file...**********");
+            System.out.println(readPersonInstanceFromFile);
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
 
     }
 }
