@@ -40,5 +40,10 @@ public class SimpleMain {
         }catch (IOException e){
             e.printStackTrace();
         }
+
+        //saving as byteArray in order to maybe send it to a network
+        byte[] personInstanceBytesArray = personInstance.toByteArray(); //with this we are reading from the instance and
+        //converting it to a byteArray.
+
     }
 }
