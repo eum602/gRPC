@@ -18,5 +18,8 @@ public class SimpleMain {
         builder.addPhoneNumbers("98523567");
         builder.addPhoneNumbers("92525464");
         builder.addAllPhoneNumbers(Arrays.asList("234","456789"));
+
+        System.out.printf("Setting repeated values by using indexes");
+        builder.setPhoneNumbers(2,"456789");
     }
 }
