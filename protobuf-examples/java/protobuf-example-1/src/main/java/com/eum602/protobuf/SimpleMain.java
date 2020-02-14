@@ -2,6 +2,9 @@ package com.eum602.protobuf;
 
 import person.PersonOuterClass.Person;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Arrays;
 
 public class SimpleMain {
@@ -24,5 +27,18 @@ public class SimpleMain {
 
         System.out.println("Printing all values in the builder");
         System.out.println(builder.toString());
+
+        Person personInstance = builder.build();
+
+        //Writing the protocol buffer binary to a file
+        try {
+            FileOutputStream outputStream = new FileOutputStream("person-message.bin"); //creating a binary file
+            personInstance.writeTo(outputStream);
+            outputStream.close();
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
