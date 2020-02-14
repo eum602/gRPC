@@ -5,6 +5,8 @@
 
 ## Requirements
 * [protoc](https://github.com/eum602/Installer)
+* Gradle 6.1.1 or later
+* Optional: Intellij Idea 2019.3.3 or later
 
 ### Clone Repository ####
 
